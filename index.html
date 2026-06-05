@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Pawfect Pets - Your premium pet shop for dogs, cats, birds, fish, accessories, grooming, and veterinary services.">
+  <meta name="keywords" content="pet shop, pets, dogs, cats, pet accessories, pet grooming, pet store">
+  <meta name="author" content="Pawfect Pets">
+  <title>GWS Pets | Premium 3D Pet Shop</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Fredoka+One&display=swap"
+    rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <div id="particles-bg"></div>
+
+  <div class="floating-pets">
+    <i class="fas fa-dog floating-pet" style="--delay: 0s; --x: 10%; --y: 20%; --size: 30px;"></i>
+    <i class="fas fa-cat floating-pet" style="--delay: 2s; --x: 80%; --y: 30%; --size: 25px;"></i>
+    <i class="fas fa-dove floating-pet" style="--delay: 4s; --x: 20%; --y: 60%; --size: 20px;"></i>
+    <i class="fas fa-fish floating-pet" style="--delay: 1s; --x: 70%; --y: 70%; --size: 22px;"></i>
+    <i class="fas fa-hippo floating-pet" style="--delay: 3s; --x: 50%; --y: 15%; --size: 28px;"></i>
+    <i class="fas fa-otter floating-pet" style="--delay: 5s; --x: 40%; --y: 80%; --size: 24px;"></i>
+  </div>
+
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand" href="#">
+        <i class="fas fa-paw"></i> GWS <span>Pets</span>
+      </a>
+      <div class="nav-controls d-flex align-items-center order-lg-last">
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark/light mode">
+          <i class="fas fa-moon"></i>
+        </button>
+        <button class="cart-btn" id="cartBtn" aria-label="Shopping cart">
+          <i class="fas fa-shopping-bag"></i>
+          <span class="cart-count" id="cartCount">0</span>
+        </button>
+        <button class="navbar-toggler ms-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+      <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link active" href="#hero">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#pets">Pets</a></li>
+          <li class="nav-item"><a class="nav-link" href="#accessories">Accessories</a></li>
+          <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="search-overlay" id="searchOverlay">
+    <div class="search-container">
+      <button class="search-close" id="searchClose">&times;</button>
+      <div class="search-box">
+        <i class="fas fa-search search-icon"></i>
+        <input type="text" id="searchInput" placeholder="Search pets, accessories, services..." autofocus>
+      </div>
+      <div class="search-results" id="searchResults"></div>
+    </div>
+  </div>
+
+  <section id="hero" class="hero-section">
+    <div class="container h-100">
+      <div class="row h-100 align-items-center">
+        <div class="col-lg-6 hero-text">
+          <span class="hero-badge"><i class="fas fa-paw"></i> Welcome to GWS Pets</span>
+          <h1 class="hero-title" id="heroTitle">
+            Your <span class="gradient-text">Pet's Happiness</span> Starts Here
+          </h1>
+          <p class="hero-subtitle">Discover premium pet products, expert grooming, veterinary care, and everything your
+            furry friend deserves.</p>
+          <div class="hero-buttons">
+            <a href="#pets" class="btn btn-primary btn-glow">Shop Now <i class="fas fa-arrow-right"></i></a>
+            <a href="#services" class="btn btn-outline-light">Our Services <i class="fas fa-heart"></i></a>
+          </div>
+          <div class="hero-stats">
+            <div class="stat-item">
+              <span class="stat-number" data-count="15">0</span><span class="stat-plus">+</span>
+              <p>Happy Pets</p>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number" data-count="50">0</span><span class="stat-plus">+</span>
+              <p>Products</p>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number" data-count="1">0</span><span class="stat-plus">+</span>
+              <p>Years</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6 hero-visual">
+          <div class="hero-3d-container">
+            <div class="hero-3d-card" id="hero3DCard">
+              <div class="hero-circle-glow"></div>
+              <div class="hero-pet-wrapper">
+                <img src="https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=400&q=80" alt="Happy Dog" class="hero-pet-img">
+              </div>
+              <div class="hero-floating-elements">
+                <i class="fas fa-bone element e1"></i>
+                <i class="fas fa-star element e2"></i>
+                <i class="fas fa-heart element e3"></i>
+                <i class="fas fa-crown element e4"></i>
+              </div>
+              <div class="hero-price-tag">
+                <span class="price-label">Starting from</span>
+                <span class="price-value">Rs.30k</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-wave">
+      <svg viewBox="0 0 1440 100" preserveAspectRatio="none">
+        <path d="M0,50 C360,100 1080,0 1440,50 L1440,100 L0,100 Z" fill="var(--bg-primary)"></path>
+      </svg>
+    </div>
+  </section>
+
+  <section id="pets" class="section pets-section">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="section-badge">Find Your Friend</span>
+        <h2>Featured <span class="gradient-text">Pets</span></h2>
+        <p>Meet our adorable pets looking for a loving home</p>
+      </div>
+      <div class="pet-filter-bar">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="dog"><i class="fas fa-dog"></i> Dogs</button>
+        <button class="filter-btn" data-filter="cat"><i class="fas fa-cat"></i> Cats</button>
+        <button class="filter-btn" data-filter="bird"><i class="fas fa-dove"></i> Birds</button>
+        <button class="filter-btn" data-filter="fish"><i class="fas fa-fish"></i> Fish</button>
+      </div>
+      <div class="row g-4" id="petsGrid">
+        <div class="col-lg-3 col-md-6 pet-card-item" data-category="dog">
+          <div class="pet-card-3d">
+            <div class="pet-card-inner">
+              <div class="pet-card-front">
+                <div class="pet-img-wrapper">
+                  <img src="https://images.unsplash.com/photo-1552053831-71594a27632d?w=300&q=80" alt="Golden Retriever">
+                  <span class="pet-badge">Popular</span>
+                </div>
+                <div class="pet-info">
+                  <h3>Golden Retriever</h3>
+                  <div class="pet-meta">
+                    <span><i class="fas fa-venus-mars"></i> Male</span>
+                    <span><i class="fas fa-calendar"></i> 3 mo</span>
+                  </div>
+                  <p>Friendly, intelligent, and devoted family companion.</p>
+                  <div class="pet-footer">
+                    <span class="pet-price">₹-9k</span>
+                    <button class="btn-add-cart" data-name="Golden Retriever" data-price="899">
+                      <i class="fas fa-shopping-bag"></i> Adopt
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 pet-card-item" data-category="cat">
+          <div class="pet-card-3d">
+            <div class="pet-card-inner">
+              <div class="pet-card-front">
+                <div class="pet-img-wrapper">
+                  <img src="https://images.unsplash.com/photo-1574158622682-e40e69881006?w=300&q=80" alt="Persian Cat">
+                  <span class="pet-badge sale">Sale</span>
+                </div>
+                <div class="pet-info">
+                  <h3>Persian Cat</h3>
+                  <div class="pet-meta">
+                    <span><i class="fas fa-venus-mars"></i> Female</span>
+                    <span><i class="fas fa-calendar"></i> 2 mo</span>
+                  </div>
+                  <p>Sweet, calm, and beautifully fluffy lap cat.</p>
+                  <div class="pet-footer">
+                    <span class="pet-price">₹-9k</span>
+                    <button class="btn-add-cart" data-name="Persian Cat" data-price="699">
+                      <i class="fas fa-shopping-bag"></i> Adopt
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 pet-card-item" data-category="bird">
+          <div class="pet-card-3d">
+            <div class="pet-card-inner">
+              <div class="pet-card-front">
+                <div class="pet-img-wrapper">
+                  <img src="https://images.unsplash.com/photo-1552728089-57bdde30beb3?w=300&q=80" alt="Cockatiel">
+                  <span class="pet-badge">New</span>
+                </div>
+                <div class="pet-info">
+                  <h3>Cockatiel</h3>
+                  <div class="pet-meta">
+                    <span><i class="fas fa-venus-mars"></i> Male</span>
+                    <span><i class="fas fa-calendar"></i> 4 mo</span>
+                  </div>
+                  <p>Playful, whistling, and easy to tame pet bird.</p>
+                  <div class="pet-footer">
+                    <span class="pet-price">₹-5k</span>
+                    <button class="btn-add-cart" data-name="Cockatiel" data-price="299">
+                      <i class="fas fa-shopping-bag"></i> Adopt
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 pet-card-item" data-category="fish">
+          <div class="pet-card-3d">
+            <div class="pet-card-inner">
+              <div class="pet-card-front">
+                <div class="pet-img-wrapper">
+                  <img src="https://images.unsplash.com/photo-1520366498724-709889c0c685?w=300&q=80" alt="Betta Fish">
+                  <span class="pet-badge sale">Sale</span>
+                </div>
+                <div class="pet-info">
+                  <h3>Betta Fish</h3>
+                  <div class="pet-meta">
+                    <span><i class="fas fa-venus-mars"></i> Male</span>
+                    <span><i class="fas fa-calendar"></i> 6 mo</span>
+                  </div>
+                  <p>Stunning vibrant colors, easy-care aquarium fish.</p>
+                  <div class="pet-footer">
+                    <span class="pet-price">₹-15k</span>
+                    <button class="btn-add-cart" data-name="Betta Fish" data-price="29">
+                      <i class="fas fa-shopping-bag"></i> Adopt
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 pet-card-item" data-category="dog">
+          <div class="pet-card-3d">
+            <div class="pet-card-inner">
+              <div class="pet-card-front">
+                <div class="pet-img-wrapper">
+                  <img src="https://images.unsplash.com/photo-1618826411640-d6df44dd3f7a?w=300&q=80" alt="French Bulldog">
+                  <span class="pet-badge">Popular</span>
+                </div>
+                <div class="pet-info">
+                  <h3>French Bulldog</h3>
+                  <div class="pet-meta">
+                    <span><i class="fas fa-venus-mars"></i> Female</span>
+                    <span><i class="fas fa-calendar"></i> 5 mo</span>
+                  </div>
+                  <p>Playful, affectionate, and adaptable small breed.</p>
+                  <div class="pet-footer">
+                    <span class="pet-price">₹-99k</span>
+                    <button class="btn-add-cart" data-name="French Bulldog" data-price="1299">
+                      <i class="fas fa-shopping-bag"></i> Adopt
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 pet-card-item" data-category="cat">
+          <div class="pet-card-3d">
+            <div class="pet-card-inner">
+              <div class="pet-card-front">
+                <div class="pet-img-wrapper">
+                  <img src="https://images.unsplash.com/photo-1608848461950-0fe51dfc41cb?w=300&q=80" alt="Maine Coon">
+                  <span class="pet-badge">New</span>
+                </div>
+                <div class="pet-info">
+                  <h3>Maine Coon</h3>
+                  <div class="pet-meta">
+                    <span><i class="fas fa-venus-mars"></i> Male</span>
+                    <span><i class="fas fa-calendar"></i> 4 mo</span>
+                  </div>
+                  <p>Gentle giant with a luxurious coat and sweet nature.</p>
+                  <div class="pet-footer">
+                    <span class="pet-price">$999</span>
+                    <button class="btn-add-cart" data-name="Maine Coon" data-price="999">
+                      <i class="fas fa-shopping-bag"></i> Adopt
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 pet-card-item" data-category="bird">
+          <div class="pet-card-3d">
+            <div class="pet-card-inner">
+              <div class="pet-card-front">
+                <div class="pet-img-wrapper">
+                  <img src="https://images.unsplash.com/photo-1522858547137-f1dcec3be0c1?w=300&q=80" alt="Parakeet">
+                  <span class="pet-badge">Popular</span>
+                </div>
+                <div class="pet-info">
+                  <h3>Parakeet</h3>
+                  <div class="pet-meta">
+                    <span><i class="fas fa-venus-mars"></i> Female</span>
+                    <span><i class="fas fa-calendar"></i> 2 mo</span>
+                  </div>
+                  <p>Colorful, talkative, and social companion bird.</p>
+                  <div class="pet-footer">
+                    <span class="pet-price">₹-9k</span>
+                    <button class="btn-add-cart" data-name="Parakeet" data-price="149">
+                      <i class="fas fa-shopping-bag"></i> Adopt
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 pet-card-item" data-category="fish">
+          <div class="pet-card-3d">
+            <div class="pet-card-inner">
+              <div class="pet-card-front">
+                <div class="pet-img-wrapper">
+                  <img src="https://images.unsplash.com/photo-1584552078580-0e3ab9638de1?w=300&q=80" alt="Angelfish">
+                  <span class="pet-badge">New</span>
+                </div>
+                <div class="pet-info">
+                  <h3>Angelfish</h3>
+                  <div class="pet-meta">
+                    <span><i class="fas fa-venus-mars"></i> Pair</span>
+                    <span><i class="fas fa-calendar"></i> 3 mo</span>
+                  </div>
+                  <p>Elegant freshwater fish with striking fin shapes.</p>
+                  <div class="pet-footer">
+                    <span class="pet-price">₹-9k</span>
+                    <button class="btn-add-cart" data-name="Angelfish" data-price="49">
+                      <i class="fas fa-shopping-bag"></i> Adopt
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="accessories" class="section accessories-section">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="section-badge">Pet Essentials</span>
+        <h2>Premium <span class="gradient-text">Accessories</span></h2>
+        <p>Everything your pet needs for a happy, healthy life</p>
+      </div>
+      <div class="row g-4">
+        <div class="col-lg-3 col-md-6">
+          <div class="accessory-card" data-tilt>
+            <div class="accessory-icon"><i class="fas fa-utensils"></i></div>
+            <div class="accessory-img"><i class="fas fa-bowl-food"></i></div>
+            <h3>Pet Food</h3>
+            <p>Premium nutrition from top brands</p>
+            <div class="accessory-footer">
+              <span class="accessory-price">₹-249</span>
+              <button class="btn-add-cart" data-name="Premium Pet Food" data-price="24.99"><i
+                  class="fas fa-plus"></i></button>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <div class="accessory-card" data-tilt>
+            <div class="accessory-icon"><i class="fas fa-futbol"></i></div>
+            <div class="accessory-img"><i class="fas fa-baseball-ball"></i></div>
+            <h3>Pet Toys</h3>
+            <p>Fun and engaging play items</p>
+            <div class="accessory-footer">
+              <span class="accessory-price">₹-199</span>
+              <button class="btn-add-cart" data-name="Pet Toy Bundle" data-price="12.99"><i
+                  class="fas fa-plus"></i></button>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <div class="accessory-card" data-tilt>
+            <div class="accessory-icon"><i class="fas fa-bed"></i></div>
+            <div class="accessory-img"><i class="fas fa-couch"></i></div>
+            <h3>Pet Beds</h3>
+            <p>Cozy orthopedic sleeping solutions</p>
+            <div class="accessory-footer">
+              <span class="accessory-price">₹-399</span>
+              <button class="btn-add-cart" data-name="Orthopedic Pet Bed" data-price="39.99"><i
+                  class="fas fa-plus"></i></button>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <div class="accessory-card" data-tilt>
+            <div class="accessory-icon"><i class="fas fa-cut"></i></div>
+            <div class="accessory-img"><i class="fas fa-hand-sparkles"></i></div>
+            <h3>Grooming Kit</h3>
+            <p>Professional care essentials</p>
+            <div class="accessory-footer">
+              <span class="accessory-price">₹-499</span>
+              <button class="btn-add-cart" data-name="Grooming Kit" data-price="49.99"><i
+                  class="fas fa-plus"></i></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="services" class="section services-section">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="section-badge">What We Offer</span>
+        <h2>Our Premium <span class="gradient-text">Services</span></h2>
+        <p>Comprehensive care solutions for your beloved pets</p>
+      </div>
+      <div class="row g-4">
+        <div class="col-lg-3 col-md-6">
+          <div class="service-card">
+            <div class="service-icon-wrapper">
+              <i class="fas fa-cut"></i>
+              <div class="service-glow"></div>
+            </div>
+            <h3>Pet Grooming</h3>
+            <p>Professional styling, bathing, nail trimming, and spa treatments.</p>
+            <a href="#" class="service-link">Book Now <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <div class="service-card">
+            <div class="service-icon-wrapper">
+              <i class="fas fa-stethoscope"></i>
+              <div class="service-glow"></div>
+            </div>
+            <h3>Veterinary Care</h3>
+            <p>Checkups, vaccinations, dental care, and emergency services.</p>
+            <a href="#" class="service-link">Book Now <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <div class="service-card">
+            <div class="service-icon-wrapper">
+              <i class="fas fa-graduation-cap"></i>
+              <div class="service-glow"></div>
+            </div>
+            <h3>Pet Training</h3>
+            <p>Obedience, agility, behavior modification, and puppy classes.</p>
+            <a href="#" class="service-link">Book Now <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <div class="service-card">
+            <div class="service-icon-wrapper">
+              <i class="fas fa-hand-holding-heart"></i>
+              <div class="service-glow"></div>
+            </div>
+            <h3>Pet Adoption</h3>
+            <p>Find your perfect companion through our adoption program.</p>
+            <a href="#" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="gallery" class="section gallery-section">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="section-badge">Gallery</span>
+        <h2>Pet <span class="gradient-text">Moments</span></h2>
+        <p>Capturing the joy our furry friends bring</p>
+      </div>
+      <div class="gallery-slider">
+        <div class="gallery-track" id="galleryTrack">
+          <div class="gallery-slide">
+            <img src="https://images.unsplash.com/photo-1601758228041-f3b2795255f1?w=900&q=80" alt="Happy Pups">
+            <div class="gallery-overlay">
+              <h4>Happy Pups</h4>
+            </div>
+          </div>
+          <div class="gallery-slide">
+            <img src="https://images.unsplash.com/photo-1513360371669-4adf3dd7dff8?w=900&q=80" alt="Curious Cats">
+            <div class="gallery-overlay">
+              <h4>Curious Cats</h4>
+            </div>
+          </div>
+          <div class="gallery-slide">
+            <img src="https://images.unsplash.com/photo-1555169062-013468b47731?w=900&q=80" alt="Colorful Birds">
+            <div class="gallery-overlay">
+              <h4>Colorful Birds</h4>
+            </div>
+          </div>
+          <div class="gallery-slide">
+            <img src="https://images.unsplash.com/photo-1519121785383-3229633bb75b?w=900&q=80" alt="Aquatic World">
+            <div class="gallery-overlay">
+              <h4>Aquatic World</h4>
+            </div>
+          </div>
+          <div class="gallery-slide">
+            <img src="https://images.unsplash.com/photo-1548767797-d8c844163c4c?w=900&q=80" alt="Adorable Friends">
+            <div class="gallery-overlay">
+              <h4>Adorable Friends</h4>
+            </div>
+          </div>
+          <div class="gallery-slide">
+            <img src="https://images.unsplash.com/photo-1517423738875-5ce310acd3da?w=900&q=80" alt="Play Time">
+            <div class="gallery-overlay">
+              <h4>Play Time</h4>
+            </div>
+          </div>
+        </div>
+        <button class="gallery-btn prev" id="galleryPrev"><i class="fas fa-chevron-left"></i></button>
+        <button class="gallery-btn next" id="galleryNext"><i class="fas fa-chevron-right"></i></button>
+        <div class="gallery-dots" id="galleryDots"></div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <section id="contact" class="section contact-section">
+    <div class="container">
+      <div class="section-header text-center">
+        <span class="section-badge">Get In Touch</span>
+        <h2>Contact <span class="gradient-text">Us</span></h2>
+        <p>We'd love to hear from you</p>
+      </div>
+      <div class="row g-4">
+        <div class="col-lg-5">
+          <div class="contact-info glass">
+            <h3><i class="fas fa-paw"></i> GWS Pets</h3>
+            <div class="contact-detail">
+              <i class="fas fa-map-marker-alt"></i>
+              <div>
+                <h4>Visit Us</h4>
+                <p>123 PK Street, Vellore District<br>Tamil Nadu, India</p>
+              </div>
+            </div>
+            <div class="contact-detail">
+              <i class="fas fa-phone-alt"></i>
+              <div>
+                <h4>Call Us</h4>
+                <p>+91 987654321</p>
+              </div>
+            </div>
+            <div class="contact-detail">
+              <i class="fas fa-envelope"></i>
+              <div>
+                <h4>Gmail Us</h4>
+                <p>gwspets@gmail.com</p>
+              </div>
+            </div>
+            <div class="contact-detail">
+              <i class="fas fa-clock"></i>
+              <div>
+                <h4>Working Hours</h4>
+                <p>Mon - Sat: 9:00 AM - 8:00 PM<br>Sun: 10:00 AM - 12:00 PM</p>
+              </div>
+            </div>
+            <div class="contact-social">
+              <a href="" class="social-link"><i class="fab fa-facebook-f"></i></a>
+              <a href="" class="social-link"><i class="fab fa-twitter"></i></a>
+              <a href="" class="social-link"><i class="fab fa-instagram"></i></a>
+              <a href="" class="social-link"><i class="fab fa-youtube"></i></a>
+              <a href="" class="social-link"><i class="fab fa-tiktok"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-7">
+          <div class="contact-form-wrapper glass">
+            <form id="contactForm">
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Your Name" required>
+                    <i class="fas fa-user"></i>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <input type="email" class="form-control" placeholder="Your Email" required>
+                    <i class="fas fa-envelope"></i>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Subject">
+                    <i class="fas fa-tag"></i>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <div class="form-group">
+                    <textarea class="form-control" rows="5" placeholder="Your Message" required></textarea>
+                    <i class="fas fa-comment"></i>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <button type="submit" class="btn btn-primary btn-glow w-100">Send Message <i
+                      class="fas fa-paper-plane"></i></button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="map-section">
+    <div class="map-placeholder">
+      <i class="fas fa-map-marked-alt"></i>
+      <h3>Find Us Here</h3>
+      <p>123 PK Street, Vellore District Tamil Nadu, India</p>
+      <a href="" target="_blank"
+        class="btn btn-outline-light btn-sm">Open in Google Maps <i class="fas fa-external-link-alt"></i></a>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-4">
+          <div class="footer-brand">
+            <i class="fas fa-paw"></i> Pawfect <span>Pets</span>
+          </div>
+          <p>Your trusted partner in pet care. We provide premium products, expert services, and loving care for your
+            furry family members.</p>
+          <div class="footer-social">
+            <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-4">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#pets">Pets</a></li>
+            <li><a href="#accessories">Accessories</a></li>
+            <li><a href="#services">Services</a></li>
+
+          </ul>
+        </div>
+        <div class="col-lg-2 col-md-4">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="#">Pet Grooming</a></li>
+            <li><a href="#">Veterinary Care</a></li>
+            <li><a href="#">Pet Training</a></li>
+            <li><a href="#">Pet Adoption</a></li>
+            <li><a href="#">Pet Boarding</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-2 col-md-4">
+          <h4>Support</h4>
+          <ul>
+          <li><a href="#contact">Contact</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+            <li><a href="#">Shipping Info</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-2">
+          <h4>Newsletter</h4>
+          <p>Stay updated with our latest deals!</p>
+          <div class="newsletter-form">
+            <input type="email" placeholder="Your email">
+            <button><i class="fas fa-paper-plane"></i></button>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 GWS Pets. All rights reserved. Made with <i class="fas fa-heart"></i> for pet lovers.</p>
+      </div>
+    </div>
+  </footer>
+
+  <div class="cart-sidebar" id="cartSidebar">
+    <div class="cart-header">
+      <h3><i class="fas fa-shopping-bag"></i> Your Cart</h3>
+      <button class="cart-close" id="cartClose">&times;</button>
+    </div>
+    <div class="cart-items" id="cartItems">
+      <div class="cart-empty">
+        <i class="fas fa-shopping-bag"></i>
+        <p>Your cart is empty</p>
+      </div>
+    </div>
+    <div class="cart-footer">
+      <div class="cart-total">
+        <span>Total:</span>
+        <span id="cartTotal">₹0</span>
+      </div>
+      <button class="btn btn-primary btn-glow w-100 checkout-btn">Checkout</button>
+    </div>
+  </div>
+  <div class="cart-overlay" id="cartOverlay"></div>
+
+  <button class="back-to-top" id="backToTop"><i class="fas fa-arrow-up"></i></button>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>
